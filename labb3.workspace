@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeLite_Workspace Name="labb3" Database="">
+  <Project Name="display" Path="display/display.project" Active="No"/>
+  <Project Name="display2" Path="display2/display2.project" Active="No"/>
+  <Project Name="diplay3" Path="diplay3/diplay3.project" Active="Yes"/>
+  <BuildMatrix>
+    <WorkspaceConfiguration Name="Debug" Selected="yes">
+      <Environment/>
+      <Project Name="display" ConfigName="Debug"/>
+      <Project Name="display2" ConfigName="Debug"/>
+      <Project Name="diplay3" ConfigName="Debug"/>
+    </WorkspaceConfiguration>
+    <WorkspaceConfiguration Name="Release" Selected="no">
+      <Environment/>
+      <Project Name="display" ConfigName="Release"/>
+      <Project Name="display2" ConfigName="Release"/>
+      <Project Name="diplay3" ConfigName="Release"/>
+    </WorkspaceConfiguration>
+    <WorkspaceConfiguration Name="SIMULATOR" Selected="no">
+      <Environment/>
+      <Project Name="diplay3" ConfigName="Simulator"/>
+      <Project Name="display" ConfigName="SIMULATOR"/>
+      <Project Name="display2" ConfigName="SIMULATOR"/>
+    </WorkspaceConfiguration>
+  </BuildMatrix>
+</CodeLite_Workspace>
