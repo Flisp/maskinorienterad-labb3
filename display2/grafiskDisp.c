@@ -6,7 +6,7 @@
 
 void init_app(void)
 {
-    RCC_AHB1ENR |= RCC_GPIO_D | RCC_GPIO_E;   /*aktivera klockan för port D och E*/
+   // RCC_AHB1ENR |= RCC_GPIO_D | RCC_GPIO_E;   /*aktivera klockan för port D och E*/
     GPIO_E.moder = 0x55555555;   /*port E utport*/ 
     GPIO_E.otyper = 0x00000000;    /*push pull*/
     GPIO_E.ospeedr = 0x55555555;   /*medium speed, om problem sätt till låg*/
@@ -61,13 +61,15 @@ static void graphic_wait_ready(void)
     
     while (1)
     {
-        graphic_ctrl_bit_set(B_E); 
+       graphic_ctrl_bit_set(B_E); 
         delay_500ns(); 
-        graphic_ctrl_bit_clear (B_E); 
         c = GPIO_E.idr_high & LCD_BUSY;      /* Vänta tills displayen inte är upptagen */
-        if (c== 0) break; 
+       
+        graphic_ctrl_bit_clear (B_E); 
         delay_500ns(); 
+		if (c== 0) break; 
     }
+    delay_500ns(); /*kolla*/
     graphic_ctrl_bit_set (B_E); 
     GPIO_E.moder = 0x55555555; 
 }
@@ -220,6 +222,7 @@ void pixel( uint32_t x, uint32_t y, uint32_t set)
     mask = mask & c;
     
     graphic_writeData(mask, controller);
+    graphic_writeCommand (LCD_ON, B_CS1|B_CS2);
 }
       
 

@@ -5,15 +5,15 @@
 ## Debug
 ProjectName            :=display
 ConfigurationName      :=Debug
-WorkspacePath          :="C:/Users/elena/Documents/Chalmers/Maskinorienterad Programmering/uppgifter/labb3"
-ProjectPath            :="C:/Users/elena/Documents/Chalmers/Maskinorienterad Programmering/uppgifter/labb3/display"
+WorkspacePath          :=E:/labb3/kodLabb3version3
+ProjectPath            :=E:/labb3/kodLabb3version3/display
 IntermediateDirectory  :=./Debug
 OutDir                 := $(IntermediateDirectory)
 CurrentFileName        :=
 CurrentFilePath        :=
 CurrentFileFullPath    :=
-User                   :=elena
-Date                   :=14/02/2017
+User                   :=yjohan
+Date                   :=15/02/2017
 CodeLitePath           :=C:/cseapp/CodeLite
 LinkerName             :=$(CodeLiteDir)/tools/gcc-arm/bin/arm-none-eabi-g++.exe
 SharedObjectLinkerName :=$(CodeLiteDir)/tools/gcc-arm/arm-none-eabi-g++.exe -shared -fPIC
@@ -99,7 +99,7 @@ PreBuild:
 ## Objects
 ##
 $(IntermediateDirectory)/startup.c$(ObjectSuffix): startup.c $(IntermediateDirectory)/startup.c$(DependSuffix)
-	$(CC) $(SourceSwitch) "C:/Users/elena/Documents/Chalmers/Maskinorienterad Programmering/uppgifter/labb3/display/startup.c" $(CFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/startup.c$(ObjectSuffix) $(IncludePath)
+	$(CC) $(SourceSwitch) "E:/labb3/kodLabb3version3/display/startup.c" $(CFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/startup.c$(ObjectSuffix) $(IncludePath)
 $(IntermediateDirectory)/startup.c$(DependSuffix): startup.c
 	@$(CC) $(CFLAGS) $(IncludePath) -MG -MP -MT$(IntermediateDirectory)/startup.c$(ObjectSuffix) -MF$(IntermediateDirectory)/startup.c$(DependSuffix) -MM startup.c
 
@@ -107,7 +107,7 @@ $(IntermediateDirectory)/startup.c$(PreprocessSuffix): startup.c
 	$(CC) $(CFLAGS) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/startup.c$(PreprocessSuffix)startup.c
 
 $(IntermediateDirectory)/grafikDisp.c$(ObjectSuffix): grafikDisp.c $(IntermediateDirectory)/grafikDisp.c$(DependSuffix)
-	$(CC) $(SourceSwitch) "C:/Users/elena/Documents/Chalmers/Maskinorienterad Programmering/uppgifter/labb3/display/grafikDisp.c" $(CFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/grafikDisp.c$(ObjectSuffix) $(IncludePath)
+	$(CC) $(SourceSwitch) "E:/labb3/kodLabb3version3/display/grafikDisp.c" $(CFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/grafikDisp.c$(ObjectSuffix) $(IncludePath)
 $(IntermediateDirectory)/grafikDisp.c$(DependSuffix): grafikDisp.c
 	@$(CC) $(CFLAGS) $(IncludePath) -MG -MP -MT$(IntermediateDirectory)/grafikDisp.c$(ObjectSuffix) -MF$(IntermediateDirectory)/grafikDisp.c$(DependSuffix) -MM grafikDisp.c
 
@@ -115,7 +115,7 @@ $(IntermediateDirectory)/grafikDisp.c$(PreprocessSuffix): grafikDisp.c
 	$(CC) $(CFLAGS) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/grafikDisp.c$(PreprocessSuffix)grafikDisp.c
 
 $(IntermediateDirectory)/delay.c$(ObjectSuffix): delay.c $(IntermediateDirectory)/delay.c$(DependSuffix)
-	$(CC) $(SourceSwitch) "C:/Users/elena/Documents/Chalmers/Maskinorienterad Programmering/uppgifter/labb3/display/delay.c" $(CFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/delay.c$(ObjectSuffix) $(IncludePath)
+	$(CC) $(SourceSwitch) "E:/labb3/kodLabb3version3/display/delay.c" $(CFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/delay.c$(ObjectSuffix) $(IncludePath)
 $(IntermediateDirectory)/delay.c$(DependSuffix): delay.c
 	@$(CC) $(CFLAGS) $(IncludePath) -MG -MP -MT$(IntermediateDirectory)/delay.c$(ObjectSuffix) -MF$(IntermediateDirectory)/delay.c$(DependSuffix) -MM delay.c
 
