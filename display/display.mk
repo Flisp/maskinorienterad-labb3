@@ -5,18 +5,18 @@
 ## Debug
 ProjectName            :=display
 ConfigurationName      :=Debug
-WorkspacePath          :=E:/labb3/kodLabb3version3
-ProjectPath            :=E:/labb3/kodLabb3version3/display
+WorkspacePath          :=/home/grace/Dokument/MaskinnäraProgrammering/maskinorienterad-labb3
+ProjectPath            :=/home/grace/Dokument/MaskinnäraProgrammering/maskinorienterad-labb3/display
 IntermediateDirectory  :=./Debug
 OutDir                 := $(IntermediateDirectory)
 CurrentFileName        :=
 CurrentFilePath        :=
 CurrentFileFullPath    :=
-User                   :=yjohan
-Date                   :=15/02/2017
-CodeLitePath           :=C:/cseapp/CodeLite
-LinkerName             :=$(CodeLiteDir)/tools/gcc-arm/bin/arm-none-eabi-g++.exe
-SharedObjectLinkerName :=$(CodeLiteDir)/tools/gcc-arm/arm-none-eabi-g++.exe -shared -fPIC
+User                   :=Grace Hopper
+Date                   :=18/02/17
+CodeLitePath           :=/home/grace/.codelite
+LinkerName             :=/usr/local/gcc-arm/bin/arm-none-eabi-g++
+SharedObjectLinkerName :=/usr/local/gcc-arm/bin/arm-none-eabi-g++ -shared -fPIC
 ObjectSuffix           :=.o
 DependSuffix           :=.o.d
 PreprocessSuffix       :=.i
@@ -34,9 +34,7 @@ ArchiveOutputSwitch    :=
 PreprocessOnlySwitch   :=-E
 ObjectsFileList        :="display.txt"
 PCHCompileFlags        :=
-MakeDirCommand         :=makedir
-RcCmpOptions           := 
-RcCompilerName         :=
+MakeDirCommand         :=mkdir -p
 LinkOptions            :=  -nostartfiles -T$(ProjectPath)/md407-ram.x
 IncludePath            :=  $(IncludeSwitch). $(IncludeSwitch). 
 IncludePCH             := 
@@ -49,19 +47,19 @@ LibPath                := $(LibraryPathSwitch). $(LibraryPathSwitch)$(CodeLiteDi
 ## Common variables
 ## AR, CXX, CC, AS, CXXFLAGS and CFLAGS can be overriden using an environment variables
 ##
-AR       := $(CodeLiteDir)/tools/gcc-arm/bin/arm-none-eabi-ar.exe rcu
-CXX      := $(CodeLiteDir)/tools/gcc-arm/bin/arm-none-eabi-g++.exe
-CC       := $(CodeLiteDir)/tools/gcc-arm/bin/arm-none-eabi-gcc.exe
+AR       := /usr/local/gcc-arm/bin/arm-none-eabi-ar rcu
+CXX      := /usr/local/gcc-arm/bin/arm-none-eabi-g++
+CC       := /usr/local/gcc-arm/bin/arm-none-eabi-gcc
 CXXFLAGS :=  -g -O0 -Wall $(Preprocessors)
 CFLAGS   :=  -g -O0 -mthumb -Wall -march=armv6-m -msoft-float -Wa,-adhln=test.s $(Preprocessors)
 ASFLAGS  := 
-AS       := $(CodeLiteDir)/tools/gcc-arm/bin/arm-none-eabi-as.exe
+AS       := /usr/local/gcc-arm/bin/arm-none-eabi-as
 
 
 ##
 ## User defined environment variables
 ##
-CodeLiteDir:=C:\cseapp\CodeLite
+CodeLiteDir:=/usr/share/codelite
 Objects0=$(IntermediateDirectory)/startup.c$(ObjectSuffix) $(IntermediateDirectory)/grafikDisp.c$(ObjectSuffix) $(IntermediateDirectory)/delay.c$(ObjectSuffix) 
 
 
@@ -86,11 +84,11 @@ PostBuild:
 	@echo Done
 
 MakeIntermediateDirs:
-	@$(MakeDirCommand) "./Debug"
+	@test -d ./Debug || $(MakeDirCommand) ./Debug
 
 
 $(IntermediateDirectory)/.d:
-	@$(MakeDirCommand) "./Debug"
+	@test -d ./Debug || $(MakeDirCommand) ./Debug
 
 PreBuild:
 
@@ -99,28 +97,28 @@ PreBuild:
 ## Objects
 ##
 $(IntermediateDirectory)/startup.c$(ObjectSuffix): startup.c $(IntermediateDirectory)/startup.c$(DependSuffix)
-	$(CC) $(SourceSwitch) "E:/labb3/kodLabb3version3/display/startup.c" $(CFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/startup.c$(ObjectSuffix) $(IncludePath)
+	$(CC) $(SourceSwitch) "/home/grace/Dokument/MaskinnäraProgrammering/maskinorienterad-labb3/display/startup.c" $(CFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/startup.c$(ObjectSuffix) $(IncludePath)
 $(IntermediateDirectory)/startup.c$(DependSuffix): startup.c
 	@$(CC) $(CFLAGS) $(IncludePath) -MG -MP -MT$(IntermediateDirectory)/startup.c$(ObjectSuffix) -MF$(IntermediateDirectory)/startup.c$(DependSuffix) -MM startup.c
 
 $(IntermediateDirectory)/startup.c$(PreprocessSuffix): startup.c
-	$(CC) $(CFLAGS) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/startup.c$(PreprocessSuffix)startup.c
+	$(CC) $(CFLAGS) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/startup.c$(PreprocessSuffix) startup.c
 
 $(IntermediateDirectory)/grafikDisp.c$(ObjectSuffix): grafikDisp.c $(IntermediateDirectory)/grafikDisp.c$(DependSuffix)
-	$(CC) $(SourceSwitch) "E:/labb3/kodLabb3version3/display/grafikDisp.c" $(CFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/grafikDisp.c$(ObjectSuffix) $(IncludePath)
+	$(CC) $(SourceSwitch) "/home/grace/Dokument/MaskinnäraProgrammering/maskinorienterad-labb3/display/grafikDisp.c" $(CFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/grafikDisp.c$(ObjectSuffix) $(IncludePath)
 $(IntermediateDirectory)/grafikDisp.c$(DependSuffix): grafikDisp.c
 	@$(CC) $(CFLAGS) $(IncludePath) -MG -MP -MT$(IntermediateDirectory)/grafikDisp.c$(ObjectSuffix) -MF$(IntermediateDirectory)/grafikDisp.c$(DependSuffix) -MM grafikDisp.c
 
 $(IntermediateDirectory)/grafikDisp.c$(PreprocessSuffix): grafikDisp.c
-	$(CC) $(CFLAGS) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/grafikDisp.c$(PreprocessSuffix)grafikDisp.c
+	$(CC) $(CFLAGS) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/grafikDisp.c$(PreprocessSuffix) grafikDisp.c
 
 $(IntermediateDirectory)/delay.c$(ObjectSuffix): delay.c $(IntermediateDirectory)/delay.c$(DependSuffix)
-	$(CC) $(SourceSwitch) "E:/labb3/kodLabb3version3/display/delay.c" $(CFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/delay.c$(ObjectSuffix) $(IncludePath)
+	$(CC) $(SourceSwitch) "/home/grace/Dokument/MaskinnäraProgrammering/maskinorienterad-labb3/display/delay.c" $(CFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/delay.c$(ObjectSuffix) $(IncludePath)
 $(IntermediateDirectory)/delay.c$(DependSuffix): delay.c
 	@$(CC) $(CFLAGS) $(IncludePath) -MG -MP -MT$(IntermediateDirectory)/delay.c$(ObjectSuffix) -MF$(IntermediateDirectory)/delay.c$(DependSuffix) -MM delay.c
 
 $(IntermediateDirectory)/delay.c$(PreprocessSuffix): delay.c
-	$(CC) $(CFLAGS) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/delay.c$(PreprocessSuffix)delay.c
+	$(CC) $(CFLAGS) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/delay.c$(PreprocessSuffix) delay.c
 
 
 -include $(IntermediateDirectory)/*$(DependSuffix)
